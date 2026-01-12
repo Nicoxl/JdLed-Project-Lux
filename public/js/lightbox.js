@@ -1,0 +1,54 @@
+/*Script funzionamento lightbox galleria*/
+document.addEventListener('DOMContentLoaded', function () {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const prevBtn = document.querySelector('.lightbox-prev');
+  const nextBtn = document.querySelector('.lightbox-next');
+  const triggers = document.querySelectorAll('.lightbox-trigger');
+
+  let currentIndex = 0;
+  const imageSources = Array.from(triggers).map(img => img.dataset.full);
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = imageSources[currentIndex];
+    lightbox.classList.add('active');
+    document.body.classList.add('no-scroll'); // Disattiva scroll
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+    document.body.classList.remove('no-scroll'); // Riattiva scroll
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % imageSources.length;
+    lightboxImg.src = imageSources[currentIndex];
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+    lightboxImg.src = imageSources[currentIndex];
+  }
+
+  triggers.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'Escape') closeLightbox();
+  });
+});
