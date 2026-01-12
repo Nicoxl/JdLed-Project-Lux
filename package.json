@@ -1,0 +1,22 @@
+{
+  "name": "jdled-project-lux",
+  "version": "1.0",
+  "description": "Sito web vetrina per soluzioni di illuminazione LED",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Nessuna build necessaria'",
+    "test": "echo 'Nessun test configurato'"
+  },
+  "keywords": [
+    "led",
+    "lighting",
+    "design",
+    "vicenza"
+  ],
+  "author": "Nicola Benetti",
+  "license": "Private",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nicoxl/JdLed-Project-Lux.git"
+  }
+}
