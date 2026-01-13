@@ -11,7 +11,9 @@
     "led",
     "lighting",
     "design",
-    "vicenza"
+    "vicenza",
+    "illuminazione",
+    "jdled"
   ],
   "author": "Nicola Benetti",
   "license": "Public",
