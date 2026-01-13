@@ -50,11 +50,15 @@
         <p style="font-size: 1.25rem">Siamo qui per accoglierti, consigliarti e illuminare ogni tuo progetto con qualità e professionalità. Ti aspettiamo!</p>
     </main>
     <footer>
-        <p>&copy; 2026 JdLed Project Lux - Tutti i diritti riservati <br><br>
+        <p>&copy; <span id="current-year"></span> JdLed Project Lux - Tutti i diritti riservati <br><br>
             <a href="privacy-policy.html">Privacy Policy</a> | <a href="cookie-policy.html">Cookie Policy</a> | 
             <a href="terms-notes.html">Note Legali/Termini di Servizio</a><br><br>
             - Sito realizzato da Nicola Benetti -<br>
         </p>
     </footer>
+    <script>
+    // Inserisce automaticamente l'anno corrente nello span con id "current-year"
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
