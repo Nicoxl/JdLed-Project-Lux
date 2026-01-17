@@ -3,67 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JdLed Project Lux</title>
     <meta name="google-site-verification" content="7h1F6NSx2JzUXexdbYautrOvIHC158QyWufGms42Z9w" />
     <meta name="description" content="JdLed Project Lux - Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità">
+    <meta property="og:site_name" content="JdLed Project Lux" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"><!--Font Link-->
-    <meta property="og:site_name" content="JdLed Project Lux" />
-    <title>JdLed Project Lux</title>
     <script src="js/menu.js" defer></script>
-    <!-- update the version number as needed -->
     <script defer src="/__/firebase/11.7.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <!--<script defer src="/__/firebase/11.7.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.7.1/firebase-performance-compat.js"></script>-->
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
     <script defer src="/__/firebase/init.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-V0NZSTZY12');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V0NZSTZY12');
     </script>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "JdLed Project Lux",
-      "alternateName": ["JdLed", "JdLed Project Lux"],
-      "url": "https://jdledprojectlux.web.app/"
-    }
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "JdLed Project Lux",
+          "alternateName": ["JdLed", "JdLed Project Lux"],
+          "url": "https://jdledprojectlux.web.app/"
+        }
     </script>
+    <script src="js/main.js"></script>
   </head>
   <body class="home">
-      <header>
-        <div class="top-bar">
-          <button type="button" class="menu-toggle" id="menuToggle">&#9776;</button>
-          <div class="scrolling-text" id="scrollingText">
-            <h2>Benvenuto nel sito web di JdLed Project Lux!</h2>
-          </div>
-        </div>
-        <nav id="navMenu">
-          <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="whoweare.html">Chi Siamo</a></li>
-            <li><a href="illuminazione-interni.html">Illuminazione per Interni</a></li>
-            <li><a href="illuminazione-esterni.html">Illuminazione per Esterni</a></li>
-            <li><a href="contacts.html">Contatti</a></li>
-          </ul>
-        </nav>
-      </header>
+     <div include-html="header.html"></div>
       <main id="mainMain">
         <div>
           <h1 class="bigTitle">JdLed Project Lux</h1>
@@ -73,31 +43,9 @@
            eleganza all'ambiente offrendo prodotti di alta qualità per diverse esigenze</h2>
         </div>
       </main>
-      <footer>
-        <p>&copy; <span id="current-year"></span> JdLed Project Lux - Tutti i diritti riservati <br><br>
-            <a href="privacy-policy.html">Privacy Policy</a> | <a href="cookie-policy.html">Cookie Policy</a> | 
-            <a href="terms-notes.html">Note Legali/Termini di Servizio</a><br><br>
-            - Sito realizzato da Nicola Benetti -<br>
-        </p>
-      </footer>
+      <div include-html="footer.html"></div>
       <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
         try {
           let app = firebase.app();
           let features = [

@@ -420,6 +420,16 @@ footer a {
     color: var(--background-color);
 }
 
+body {
+    /* Questo crea un effetto dissolvenza all'apertura */
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; } /* Parte invisibile */
+    to { opacity: 1; }   /* Diventa visibile */
+}
+
 /*Media Query Mobile Devices*/
 @media (max-width: 768px) {
     h1.bigTitle {

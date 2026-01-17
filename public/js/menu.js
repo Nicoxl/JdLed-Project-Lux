@@ -1,9 +1,15 @@
-/*Script di funzionamento menu a tendina header*/
-const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.querySelector(".menu");
-    const scrollingText = document.getElementById("scrollingText");
+document.addEventListener("click", function(event) {
+    const toggleBtn = event.target.closest("#menuToggle");
 
-menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    scrollingText.classList.toggle("hide-scroll");
+    if (toggleBtn) {
+        const navMenu = document.querySelector(".menu");
+        const scrollingText = document.getElementById("scrollingText");
+        if (navMenu) {
+            navMenu.classList.toggle("active");
+        }
+        
+        if (scrollingText) {
+            scrollingText.classList.toggle("hide-scroll");
+        }
+    }
 });
