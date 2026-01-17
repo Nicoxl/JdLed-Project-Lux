@@ -1,4 +1,3 @@
-// Caricamento Header e Footer 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");
@@ -9,8 +8,11 @@ function includeHTML() {
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Non trovato.";}
+          if (this.status == 200) {
+              elmnt.innerHTML = this.responseText;
+              aggiornaAnno(); 
+          }
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
           elmnt.removeAttribute("include-html");
           includeHTML();
         }
@@ -21,6 +23,12 @@ function includeHTML() {
     }
   }
 }
+function aggiornaAnno() {
+    const spanAnno = document.getElementById("current-year");
+    if (spanAnno) {
+        spanAnno.innerText = new Date().getFullYear();
+    }
+}
 
-// Execution
+// Esecuzione
 document.addEventListener('DOMContentLoaded', includeHTML);
