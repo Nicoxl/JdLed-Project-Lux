@@ -1,5 +1,6 @@
+/* Menu Toggle Functionality */
 document.addEventListener("click", function(event) {
-    const toggleBtn = event.target.closest("#menuToggle");
+    const toggleBtn = event.target.closest(".menu-toggle") || event.target.closest("#menuToggle");
 
     if (toggleBtn) {
         const navMenu = document.querySelector(".menu");

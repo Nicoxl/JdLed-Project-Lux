@@ -1,3 +1,4 @@
+/* Funzione per includere Header e Footer nelle pagine*/
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   z = document.getElementsByTagName("*");

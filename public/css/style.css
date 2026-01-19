@@ -431,7 +431,7 @@ body {
 }
 
 /*Media Query Mobile Devices*/
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     h1.bigTitle {
         font-size: 3.75rem;
         margin-top: 3rem;
@@ -528,5 +528,49 @@ body {
 
     .lightbox-next {
       right: 10px;          
+    }
+}
+
+/*Media Query iPad and Tablet devices*/
+@media (min-width: 600px) and (max-width: 1024px) {
+    
+    /* Griglia a 2 colonne invece di 1 (mobile) o 4 (desktop) */
+    .gallery-grid {
+        flex-direction: row !important; /* Forza la riga invece della colonna */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gallery-item {
+        /* 50% larghezza meno lo spazio del gap (circa 20px) */
+        flex: 0 0 calc(50% - 30px) !important; 
+        max-width: calc(50% - 30px) !important;
+        margin-bottom: 20px;
+    }
+
+    h1.bigTitle {
+        font-size: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        text-align: center;
+    }
+
+    /* Sistema il sottotitolo */
+    #subtitle {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        text-align: center;
+        max-width: 90%;
+    }
+    
+    /* Sistema il form contatti per non essere troppo stretto */
+    .contacts-form-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .contacts-grid {
+        flex-direction: row; /* Mantiene affiancati testo e form se c'è spazio */
     }
 }
