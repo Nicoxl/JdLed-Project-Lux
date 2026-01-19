@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Connessione Assente | JdLed Project Lux</title>
+    <meta name="description" content="Connessione Internet Assente - JdLed Project Lux">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-offline.css">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0NZSTZY12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V0NZSTZY12');
+    </script>
+</head>
+<body>
+    <main class="main-offline">
+        <div class="offline-container">
+            <h1 class="offline-title">OFFLINE</h1>
+            <h2 class="offline-subtitle">Connessione Interrotta</h2>
+            <p class="offline-description">
+                Sembra che la luce della rete si sia spenta.<br>
+                Controlla il tuo wi-fi o la connessione dati e prova a riaccendere.
+            </p>
+            <button onclick="window.location.reload()" class="btn-retry">Riprova Connessione</button>
+        </div>
+    </main>
+</body>
+</html>

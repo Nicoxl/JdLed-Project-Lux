@@ -1,72 +1,79 @@
-/* Stile per la pagina 404 */
-.main-404 {
+/*Stile per la pagina offline*/ 
+.main-offline {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 60vh; /* Assicura che occupi un buono spazio */
+    min-height: 60vh;
 }
 
-.error-container {
-    max-width: 800px;
-    padding: 20px;
+/* Riquadro con bordo */
+.offline-container {
+    max-width: 1000px;
+    padding: 60px;
     border: 2px solid #c4b494;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-.error-number {
-    font-size: 8rem;
+/* Titolo OFFLINE */
+.offline-title {
+    font-size: 5rem; 
     font-weight: 700;
-    color: #8c6f4d; 
+    color: #8c6f4d;
     margin-bottom: 0;
     line-height: 1;
     text-shadow: 2px 2px 4px rgba(140, 111, 77, 0.3);
+    text-transform: uppercase;
 }
 
-.error-subtitle {
+/* SOTTOTITOLO */
+.offline-subtitle {
     font-size: 2rem;
     color: #333;
     margin-top: 10px;
     margin-bottom: 20px;
-    font-style: italic;
+    font-style: italic; 
 }
 
-.error-description {
+/* Descrizione */
+.offline-description {
     font-size: 1.2rem;
     color: #555;
     margin-bottom: 40px;
     line-height: 1.6;
 }
 
-/* Stile del bottone simile a quello dei contatti */
-.btn-back-home {
+/* Bottone */
+.btn-retry {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #7a5a32; /* Colore bottone contatti */
+    background-color: #7a5a32;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     border: 1px solid #5e4427;
+    cursor: pointer;
+    font-family: inherit;
 }
 
-.btn-back-home:hover {
+.btn-retry:hover {
     background-color: #5e4427;
     color: #fff;
     transform: translateY(-2px);
 }
 
-/* Adattamento Mobile */
+/* Mobile */
 @media (max-width: 768px) {
-    .error-number {
-        font-size: 5rem;
+    .offline-title {
+        font-size: 3.5rem;
     }
-    .error-subtitle {
+    .offline-subtitle {
         font-size: 1.5rem;
     }
-    .error-container {
+    .offline-container {
         background: none;
     }
 }
