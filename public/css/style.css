@@ -532,7 +532,7 @@ body {
 }
 
 /*Media Query iPad and Tablet devices*/
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 600px) and (max-width: 1180px) {
     
     /* Griglia a 2 colonne invece di 1 (mobile) o 4 (desktop) */
     .gallery-grid {
