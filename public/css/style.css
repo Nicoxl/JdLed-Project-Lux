@@ -247,6 +247,11 @@ h1.otherTitle {
   border-radius: 8px;
 }
 
+a[href^="tel:"] {
+    color: var(--primary-color); 
+    text-decoration: none;
+}
+
 .contacts-form-wrapper {
   display: flex;
   flex-direction: column;
@@ -366,7 +371,6 @@ label, textarea, input {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  overscroll-behavior: contain;
 }
 
 .lightbox.active {
