@@ -24,7 +24,7 @@ body {
     min-height: 100vh;
     font-family: 'Playfair Display', Georgia, serif;
     width: 100%;
-    background-color: var(--background-color); 
+    background-color: var(--primary-color); 
 }
 
 /*Header*/
