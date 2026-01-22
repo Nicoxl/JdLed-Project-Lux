@@ -123,13 +123,11 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 20px;
-  gap: 20px;
+  width: 100%;
+  padding: 20px; /* Spazio di sicurezza dai bordi */
   font-size: x-large;
-  align-items: baseline;
-  justify-content: center;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: hidden; /* Evita scroll orizzontale */
   background-color: var(--background-color);
 }
 
@@ -139,9 +137,9 @@ body.home main::before {
   top: 0; left: 0; right: 0; bottom: 0;
   background: url("../images/logo.jpg") no-repeat center center;
   background-size: contain;
-  opacity: 0.08; /* leggerissimo effetto decorativo */
-  z-index: 0;
-  pointer-events: none; /* importantissimo: sfondo ignorato da mouse */
+  opacity: 0.08;
+  z-index: -1; /* Assicura che stia dietro al testo */
+  pointer-events: none;
 }
 
 body.no-scroll {
@@ -150,14 +148,23 @@ body.no-scroll {
   width: 100%;
 }
 
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge titolo in alto e sottotitolo in basso/centro */
+    min-height: 60vh; /* Altezza minima per dare respiro al logo */
+    width: 100%;
+    max-width: 1400px; /* Non allargarsi troppo su schermi giganti */
+    margin: 0 auto;
+}
+
 h1.bigTitle {
-  font-size: 5rem;
+  font-size: clamp(3rem, 6vw, 5rem); /* Si ridimensiona fluidamente tra 3rem e 5rem */
   border-bottom: 2px solid #c4b494;
   padding-bottom: 0.3em;
-  margin-top: 2.5rem;
-  margin-bottom: 28rem;
-  margin-left: 5rem;
+  margin: 2rem 0; /* Margini puliti, via quelli enormi */
   max-width: fit-content;
+  align-self: flex-start; /* Allinea a sinistra */
 }
 
 h1.otherTitle {
@@ -168,11 +175,14 @@ h1.otherTitle {
 }
 
 #subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    margin-left: 70vw;
-    margin-right: 1vw;
-    margin-top: -40vh;
-    max-width: 30vw;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin: 2rem 0;
+    max-width: 600px; /* Larghezza massima leggibile */
+    align-self: flex-end; /* Allinea a destra (o in fondo) */
+    text-align: right;
+    background-color: rgba(253, 247, 238, 0.6); /* Leggera leggibilità sopra il logo se serve */
+    padding: 1rem;
+    border-radius: 8px;
 }
 
 /*Privacy Pages*/
@@ -208,35 +218,42 @@ h1.otherTitle {
 /*Contacts*/
 .contacts-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  flex-wrap: wrap; /* Permette di andare a capo su schermi piccoli */
+  gap: 3rem;
+  justify-content: center; /* Centra il contenuto */
+  align-items: flex-start;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .contacts-desc {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .contacts-info {
-  flex: 1;
-  min-width: 15rem;
-  max-width: 50rem;
+  flex: 1 1 300px; /* Si allarga ma non scende sotto 300px */
+  max-width: 500px;
   font-size: 1.2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5); /* Pulizia visiva */
+  border-radius: 8px;
 }
 
 .contacts-form-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
-  margin-left: 73.5vw;
-  margin-right: 1vw;
+  flex: 1 1 350px; /* Il form prende spazio ma va a capo se serve */
+  max-width: 600px;
+  margin: 0 auto; 
 }
 
 .contacts-form {
-    min-width: 18rem;
-    font-size: 1.2rem;
     width: 100%;
+    font-size: 1.2rem;
 }
 
 .contacts-form label {
@@ -253,6 +270,7 @@ h1.otherTitle {
   border: 1px solid #c5b59a;
   border-radius: 0.3rem;
   background-color: #fffaf5;
+  font-family: inherit;
 }
 
 .contacts-form button {
@@ -432,22 +450,24 @@ body {
 
 /*Media Query Mobile Devices*/
 @media (max-width: 1024px) {
+    
+    /* --- TITOLI E TESTI --- */
     h1.bigTitle {
-        font-size: 3.75rem;
-        margin-top: 3rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        margin-bottom: 35rem;
-        text-align: left;
+        text-align: center;
+        margin: 1rem auto 2rem auto; /* Spazi equilibrati */
+        align-self: center;
     }
 
     #subtitle {
-        font-size: 1.5rem;
-        margin: 1rem 3rem;
-        max-width: 80vw;
         text-align: center;
+        margin: 2rem auto;
+        align-self: center;
+        max-width: 100%;
+        background-color: rgba(253, 247, 238, 0.85); 
+        padding: 1.5rem;
     }
 
+    /* --- MENU (NON MODIFICATO - Copiato identico all'originale) --- */
     nav {
         flex-direction: column;
         align-items: flex-start;
@@ -484,34 +504,35 @@ body {
         padding: 0;
     }
 
-    .home main::before {
-    content: none;
-    }
-
+    /* --- CONTATTI --- */
     .contacts-grid {
-      flex-direction: column;
-    }
-
-    .contacts-form-wrapper {
-      align-items: stretch;
-      margin-left: 0;
-      margin-top: 390px;
+      flex-direction: column; /* Impila info e form */
+      gap: 2rem;
     }
 
     .contacts-desc {
-      text-align: left;
+      text-align: center;
     }
 
+    .contacts-form-wrapper {
+      width: 100%;
+      margin-top: 2rem; 
+      margin-left: 0;
+    }
+
+    /* --- GALLERY --- */
     .gallery-grid {
-      flex-direction: column;
+      flex-direction: column; /* Una colonna sola su mobile */
       align-items: center;
     }
 
     .gallery-item {
       max-width: 100%;
+      flex: 1 1 auto;
     }
 
-      .lightbox-prev,
+    /* --- LIGHTBOX --- */
+    .lightbox-prev,
     .lightbox-next {
       font-size: 2rem;      
       padding: 0 1.5px;      
@@ -534,43 +555,17 @@ body {
 /*Media Query iPad and Tablet devices*/
 @media (min-width: 600px) and (max-width: 1024px) {
     
-    /* Griglia a 2 colonne invece di 1 (mobile) o 4 (desktop) */
+    /* --- GALLERY (2 colonne) --- */
     .gallery-grid {
-        flex-direction: row !important; /* Forza la riga invece della colonna */
+        flex-direction: row !important;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .gallery-item {
-        /* 50% larghezza meno lo spazio del gap (circa 20px) */
+        /* 50% larghezza meno lo spazio del gap */
         flex: 0 0 calc(50% - 30px) !important; 
         max-width: calc(50% - 30px) !important;
         margin-bottom: 20px;
-    }
-
-    h1.bigTitle {
-        font-size: 4rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        text-align: center;
-    }
-
-    /* Sistema il sottotitolo */
-    #subtitle {
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        text-align: center;
-        max-width: 90%;
-    }
-    
-    /* Sistema il form contatti per non essere troppo stretto */
-    .contacts-form-wrapper {
-        margin-left: 0;
-        width: 100%;
-    }
-    
-    .contacts-grid {
-        flex-direction: row; /* Mantiene affiancati testo e form se c'è spazio */
     }
 }
