@@ -13,14 +13,18 @@
     --border-color: #005080; 
 }
 
+html {
+    background-color: var(--primary-color); /* Questo colora l'overscroll di marrone! */
+    height: 100%;
+}
 
 body {
     display: flex;
-    flex-direction: column; /* Layout verticale */
-    min-height: 100vh; /* Altezza minima del viewport */
+    flex-direction: column;
+    min-height: 100vh;
     font-family: 'Playfair Display', Georgia, serif;
     width: 100%;
-    height: 100%;
+    background-color: var(--background-color); 
 }
 
 /*Header*/
@@ -454,20 +458,34 @@ body {
     /* --- TITOLI E TESTI --- */
     h1.bigTitle {
         text-align: center;
-        margin: 1rem auto 2rem auto; /* Spazi equilibrati */
+        margin: 0; /* Rimuoviamo margini forzati */
         align-self: center;
+        font-size: 4rem;
+        padding: 0 1rem; /* Un po' di padding laterale per sicurezza */
     }
 
     #subtitle {
         text-align: center;
-        margin: 2rem auto;
+        margin: 0; /* Rimuoviamo margini forzati */
         align-self: center;
         max-width: 100%;
         background-color: rgba(253, 247, 238, 0.85); 
-        padding: 1.5rem;
+        padding: 2rem; /* Più spazio interno per il testo */
+        border-radius: 15px; /* Arrotondiamo un po' di più */
+        box-shadow: 0 4px 15px rgba(140, 111, 77, 0.1); 
     }
 
-    /* --- MENU (NON MODIFICATO - Copiato identico all'originale) --- */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 75vh; 
+        /* "space-evenly" mette spazio uguale sopra, in mezzo e sotto: molto più arioso */
+        justify-content: space-evenly; 
+        align-items: center;
+        gap: 1rem; /* Gap ridotto perché ci pensa space-evenly a distanziarli */
+    }
+
+    /* --- MENU --- */
     nav {
         flex-direction: column;
         align-items: flex-start;
