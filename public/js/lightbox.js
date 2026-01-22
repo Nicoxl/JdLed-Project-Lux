@@ -60,4 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
+  // BLOCCA ZOOM SU IPHONE (Safari)
+  // Impedisce l'evento "gesture" (pinch) dentro la lightbox
+  lightbox.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+  });
+  
+  lightbox.addEventListener('touchmove', function(e) {
+    // Se l'utente usa più di 1 dito (sta provando a zoomare), blocca tutto
+    if (e.touches.length > 1) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 });

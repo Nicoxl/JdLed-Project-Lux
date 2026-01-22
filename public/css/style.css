@@ -371,6 +371,7 @@ label, textarea, input {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  touch-action: none; /* Disabilita lo zoom pinch-to-zoom */
 }
 
 .lightbox.active {
