@@ -33,3 +33,17 @@ function aggiornaAnno() {
 
 // Esecuzione
 document.addEventListener('DOMContentLoaded', includeHTML);
+
+// Preloader
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Aggiunge la classe che fa partire la dissolvenza
+        preloader.classList.add('loaded');
+      
+        // Rimuove fisicamente l'elemento dopo la transizione
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+});
