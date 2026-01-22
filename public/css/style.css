@@ -147,8 +147,9 @@ body.home main::before {
 }
 
 body.no-scroll {
-  overflow: hidden;
-  position: fixed;
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed; /* Blocca il corpo pagina */
   width: 100%;
 }
 
@@ -355,11 +356,13 @@ label, textarea, input {
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 1000;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999; /* Molto alto per coprire tutto */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;       /* Fallback per browser vecchi */
+  height: 100dvh;      /* Dynamic Viewport Height: si adatta perfettamente al mobile */
+  background-color: #000000; /* Nero solido (non usare rgba) per coprire eventuali buchi */
   justify-content: center;
   align-items: center;
   padding: 20px;

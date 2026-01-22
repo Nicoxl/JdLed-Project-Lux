@@ -9,18 +9,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentIndex = 0;
   const imageSources = Array.from(triggers).map(img => img.dataset.full);
+  
+  // Variabile per salvare dove si trovava l'utente
+  let scrollPosition = 0;
 
   function openLightbox(index) {
+    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
     currentIndex = index;
     lightboxImg.src = imageSources[currentIndex];
     lightbox.classList.add('active');
-    document.body.classList.add('no-scroll'); // Disattiva scroll
+    
+    document.body.classList.add('no-scroll');
+    document.body.style.top = `-${scrollPosition}px`;
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightboxImg.src = '';
-    document.body.classList.remove('no-scroll'); // Riattiva scroll
+    document.body.classList.remove('no-scroll');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
   }
 
   function showNext() {
