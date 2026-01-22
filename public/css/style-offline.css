@@ -65,7 +65,7 @@
     transform: translateY(-2px);
 }
 
-/* Mobile */
+/* Media Query Mobile */
 @media (max-width: 768px) {
     .offline-title {
         font-size: 3.5rem;

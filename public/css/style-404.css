@@ -58,7 +58,7 @@
     transform: translateY(-2px);
 }
 
-/* Adattamento Mobile */
+/* Media Query Mobile */
 @media (max-width: 768px) {
     .error-number {
         font-size: 5rem;
