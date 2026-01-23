@@ -12,6 +12,12 @@
   "theme_color": "#8c6f4d",
   "orientation": "any",
   "lang": "it-IT",
+  "protocol_handlers": [
+    {
+      "protocol": "web+jdled",
+      "url": "/index.html?type=%s"
+    }
+  ],
   "icons": [
     {
       "src": "/images/icon-192.png",
