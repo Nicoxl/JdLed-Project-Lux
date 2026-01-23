@@ -1,6 +1,6 @@
 {
   "name": "jdled-project-lux",
-  "version": "1.0.5",
+  "version": "1.2.0",
   "description": "Sito web vetrina per soluzioni di illuminazione LED",
   "main": "index.html",
   "scripts": {
