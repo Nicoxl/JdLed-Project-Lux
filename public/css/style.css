@@ -631,3 +631,23 @@ footer a {
         margin-bottom: 20px;
     }
 }
+
+/* Solo se la Window Controls Overlay è attiva (su PC Desktop installati) */
+@media (display-mode: window-controls-overlay) {
+    header {
+        /* Sposta il contenuto per non finire sotto i pulsanti */
+        padding-right: env(titlebar-area-x, 0); 
+        
+        /* Sintassi corretta per Chrome/Edge/Brave */
+        -webkit-app-region: drag; 
+        
+        /* Sintassi standard (per il futuro) */
+        app-region: drag; 
+    }
+
+    /* I pulsanti devono essere cliccabili */
+    header button, header a, header nav {
+        -webkit-app-region: no-drag;
+        app-region: no-drag;
+    }
+}

@@ -1,9 +1,13 @@
 {
   "name": "JdLed Project Lux",
   "short_name": "JdLed",
+  "id": "/index.html",
   "description": "Tutti i consigli per illuminare la tua casa con le ultime tendenze e prodotti di alta qualità.",
   "start_url": "/index.html",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay"
+  ],
   "background_color": "#fdf7ee",
   "theme_color": "#8c6f4d",
   "orientation": "any",
