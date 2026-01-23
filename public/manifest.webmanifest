@@ -12,24 +12,32 @@
   "theme_color": "#8c6f4d",
   "orientation": "any",
   "lang": "it-IT",
-  "protocol_handlers": [
-    {
-      "protocol": "web+jdled",
-      "url": "/index.html?type=%s"
-    }
-  ],
   "icons": [
     {
       "src": "/images/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshots/screenshot-mobile.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/images/screenshots/screenshot-desktop.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide"
     }
   ]
 }
